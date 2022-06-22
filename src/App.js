@@ -16,7 +16,7 @@ import Navbar from './components/Navbar';
 import Registration from './components/Registration'
 
 function App() {
-  const [auth, setAuth] = useState(false);
+  const [auth, setAuth] = useState(true);
  
 
   return (

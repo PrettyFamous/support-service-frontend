@@ -47,4 +47,10 @@
   }
 }
 
-
+@media all and (max-width: 800px) {
+  .container {
+    .input {
+      height: 7vh;
+    }
+  }
+}

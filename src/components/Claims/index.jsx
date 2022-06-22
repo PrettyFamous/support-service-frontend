@@ -1,13 +1,10 @@
-import claimsData from '../../data/claims.js'
+import { greater, less, etc, plus } from '../../assets/img/index.js'
 import { checkClaimTypeColor } from '../../tools/checkClaimTypeColor'
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
+import claimsData from '../../data/claims.js'
 import './Claims.scss'
 
-import plusSvg from '../../assets/img/icon-plus.svg'
-import etcSvg from '../../assets/img/etc.svg'
-import lessSvg from '../../assets/img/less.svg'
-import greaterSvg from '../../assets/img/greater.svg'
 
 const Claims = () => {
   const navigate = useNavigate();
@@ -17,7 +14,7 @@ const Claims = () => {
       <div className='claims__header'>
         <h2>Your claims</h2>
         <button className='claims__addButton' onClick={() => navigate("/create")}>
-          <img src={plusSvg}/> Create claim
+          <img src={plus}/> Create claim
         </button>
       </div>
       <table>
@@ -52,15 +49,15 @@ const Claims = () => {
         </tbody>
       </table>
       <div className='pages'>
-          <button className='pages__button'><img src={lessSvg}/></button>
+          <button className='pages__button'><img src={less}/></button>
           <button className='pages__button'>1</button>
-          <img className="pages__etc" src={etcSvg}/>
+          <img className="pages__etc" src={etc}/>
           <button className='pages__button'>4</button>
           <button className='pages__button active'>5</button>
           <button className='pages__button'>6</button>
-          <img className="pages__etc" src={etcSvg}/>
+          <img className="pages__etc" src={etc}/>
           <button className='pages__button'>50</button>
-          <button className='pages__button'><img src={greaterSvg}/></button>
+          <button className='pages__button'><img src={greater}/></button>
       </div>
     </div>
   )

@@ -130,9 +130,13 @@
       line-height: 17px;
       color: #2D3436;
 
-      a {
-        text-decoration: none;
+      span {
         color: #2F80ED;
+
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
       }
     }
 
