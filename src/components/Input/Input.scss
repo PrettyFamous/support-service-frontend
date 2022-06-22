@@ -1,0 +1,50 @@
+.container {
+  position: relative;
+
+
+  .label {
+    margin: 0;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 800;
+    font-size: .55em;
+    line-height: 15px;
+    color: #ADADAD;
+  }
+  
+  .input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 5vh;
+    max-height: 200px;
+    background-color: #F0F0F0;
+    border: 0;
+    border-radius: 10px;
+    padding: 0 3%;
+    margin-bottom: 8%;
+    
+
+    &::placeholder {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: .9em;
+      line-height: 22px;
+      color: #000000;
+    }
+
+    &:focus {
+      border: 2px solid #FDCB6E;
+    }
+  }
+
+  .image {
+    width: 4vh;
+    position: absolute;
+    bottom: -.8vh;
+    right: .5vh;
+  }
+}
+
+

@@ -1,0 +1,77 @@
+.handle {
+  margin-left: 8vw;
+  margin-top: 12vh;
+  position: absolute;
+  width: 30vw;
+  
+
+  &__header {
+    width: 89vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__buttons {
+    button {
+      height: 5vh;
+      width: 8vh;
+      margin-right: 1vh;
+      border-radius: 14px;
+      color: #fff;
+      border: 0;
+      text-align: center;
+
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.25px;
+      font-size: 1.7vh;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .cancel {
+      color: #858585;
+      border: 1px solid #ADADAD;
+
+      &:hover {
+        color: #7DB59A;
+        border-color: #7DB59A;
+      }
+
+      &:active {
+        color: #4F896C;
+        border-color: #4F896C;
+      }
+    }
+
+    .done {
+      background-color: #7DB59A;
+
+      &:hover {
+        background-color: #5B9479;
+      }
+
+      &:active {
+        background-color: #4F896C;
+      }
+    }
+
+    .decline {
+      background-color: #E84393;
+
+      &:hover {
+        background-color: #B03671;
+      }
+
+      &:active {
+        background-color: #832552;
+      }
+    }
+  }
+
+
+}
