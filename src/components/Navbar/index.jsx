@@ -8,9 +8,9 @@ const Navbar = () => {
 
   return (
     <nav className="navigation">
-          <a className="navigation__link" onClick={() => navigate("/claims")}>
-            <img className="navigation__img" src={nav_logo} alt="logo" />
-          </a>
+        <a className="navigation__link" onClick={() => navigate("/claims")}>
+          <img className="navigation__img" src={nav_logo} alt="logo" />
+        </a>
         <div className="navigation__buttons">
           <a className="button active" href="#"><img src={home} /></a>
           <a className="button" href="#"><img src={globe} /></a>

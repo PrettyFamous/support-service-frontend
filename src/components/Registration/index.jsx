@@ -17,19 +17,19 @@ const Registration = () => {
           <img className="login__logo" src={login_logo} alt="logo" />
           <form className="login__form">
             <Input label="full name" text="Type your full name" />
-            <Input label="e-mail" text="Type your e-mail" img={mail}/>
-            <Input label="password" text="Type your password" img={lock}/>
-            <Input label="confirm password" text="Type your password" img={lock}/>
-            <button className='login__button' >Register</button>
-            <p className='login__reginfo'>
+            <Input label="e-mail" text="Type your e-mail" img={mail} alt="mail"/>
+            <Input label="password" text="Type your password" img={lock} alt="psw"/>
+            <Input label="confirm password" text="Type your password" img={lock} alt="psw"/>
+            <button className="login__button" >Register</button>
+            <p className="login__reginfo">
               Have an account?&nbsp;
               <span onClick={() => navigate("/login")}>Sign in.</span>
             </p>
           </form>
         </div>
       </div>
-      <footer className='footer'>
-        <img className="footer__image" src={footer} alt='logo' />
+      <footer className="footer">
+        <img className="footer__image" src={footer} alt="logo" />
       </footer>
     </>
   )

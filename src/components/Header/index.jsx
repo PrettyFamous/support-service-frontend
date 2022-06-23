@@ -33,30 +33,30 @@ const Header = () => {
                   navigate("/claims")
                   setMenuOpened(!menuOpened)
                 }}>
-                <img src={home} /> Home
+                <img src={home} alt=""/> Home
               </span>
-              <span className="menu__item" href="#">
-                <img src={globe} /> Services
+              <span className="menu__item">
+                <img src={globe} alt=""/> Services
               </span>
-              <span className="menu__item" href="#">
-                <img src={archive} /> Storage
+              <span className="menu__item">
+                <img src={archive} alt=""/> Storage
                 </span>
-              <span className="menu__item" href="#">
-                <img src={pie} /> Charts
+              <span className="menu__item">
+                <img src={pie} alt=""/> Charts
               </span>
-              <span className="menu__item" href="#">
-                <img src={dollar} /> Currency
+              <span className="menu__item">
+                <img src={dollar} alt=""/> Currency
               </span>
-              <span className="menu__item" href="#">
-                <img src={database} /> Base
+              <span className="menu__item">
+                <img src={database} alt=""/> Base
               </span>
-              <span className="menu__item" href="#">
-                <img src={arrow} /> Locations
+              <span className="menu__item">
+                <img src={arrow} alt=""/> Locations
               </span>
             </div>
             <div className='menu__blur' onClick={menuSwitcher}></div>
           </div>
-        : <img className="header__menu-button" src={burger} onClick={menuSwitcher}></img>}
+        : <img className="header__menu-button" src={burger} onClick={menuSwitcher} alt="menu"></img>}
       <a className="header__notifications" href="#"><Notifications /></a>
       <img className="header__photo" src={photoPng} alt="photo"/>
       <a href="#" className='header__fullname'>Ivan Ivanov</a>

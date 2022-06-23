@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import './CreateClaim.scss'
 
 const CreateClaim = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <div className='handle'>

@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom"
 import Input from '../Input'
 
 import './HandleClaim.scss'
 
 
 const HandleClaim = () => {
+  const navigate = useNavigate();
+
   return (
     <div className='handle'>
       <div className='handle__header'>
@@ -13,7 +16,7 @@ const HandleClaim = () => {
       <Input label="Type" text="Hardware" disabled/>
       <Input label="Description" text="Some claim description here" disabled/>
       <div className="handle__buttons">
-        <button className='cancel'>Cancel</button>
+        <button className='cancel' onClick={() => navigate("/claims")}>Cancel</button>
         <button className='done'>Done</button>
         <button className='decline'>Decline</button>
       </div>
