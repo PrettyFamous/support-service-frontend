@@ -75,7 +75,7 @@
   }
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 800px), all and (max-height: 500px) {
   .handle {
     width: 84vw;
     margin-top: 12vh;
@@ -83,7 +83,7 @@
     z-index: 1;
 
     &__header {
-      width: 100vw;
+      width: 82vw;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -93,7 +93,7 @@
       button {
         height: 7vh;
         width: 11vh;
-        margin-right: 2vh;
+        margin-right: 4vw;
         border-radius: 14px;
         color: #fff;
         border: 0;

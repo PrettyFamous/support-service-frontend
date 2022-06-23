@@ -107,7 +107,7 @@
 
 
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 800px), all and (max-height: 500px) {
   .header {
     background-color: #7DB59A;
     border-color: #7DB59A;

@@ -181,7 +181,7 @@
 
 
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 800px), all and (max-height: 500px) {
   .claims {
     margin-left: 5vw;
     width: 90vw;

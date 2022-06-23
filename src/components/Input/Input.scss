@@ -47,10 +47,18 @@
   }
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 800px), all and (max-height: 500px) {
   .container {
     .input {
       height: 7vh;
+      font-size: 1em;
+    }
+
+    .label {
+      letter-spacing: 2.5px;
+      font-size: .8em;
+      line-height: 15px;
+      margin-bottom: 5px;
     }
   }
 }
