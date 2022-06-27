@@ -1,7 +1,6 @@
 .container {
   position: relative;
 
-
   .label {
     margin: 0;
     letter-spacing: 2.5px;
@@ -37,6 +36,10 @@
     &:focus {
       border: 2px solid #FDCB6E;
     }
+  }
+
+  .error {
+    border: 2px solid #CC1F1F;
   }
 
   .image {
