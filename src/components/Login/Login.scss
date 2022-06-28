@@ -37,9 +37,11 @@
 
 
     &__check {
-      display: inline-flex;
       align-items: center;
       margin-top: -10%;
+      margin-bottom: 8%;
+     
+      
       
       .custom-checkbox {
         position: absolute;

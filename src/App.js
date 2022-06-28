@@ -3,6 +3,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  Navigate
 } from "react-router-dom";
 import { useState } from 'react';
 import './index.scss';
@@ -16,18 +17,16 @@ import Navbar from './components/Navbar';
 import Registration from './components/Registration'
 
 function App() {
-  const [auth, setAuth] = useState(true);
- 
-
   return (
     <BrowserRouter>
-    {auth && 
+    {localStorage.getItem('userInfo') && 
       <>
         <Navbar />
         <Header />
       </>
     }
     <Routes>
+      <Route path="/" element={<Navigate to="/login" />} />
       <Route path="/registration" element={<Registration />} />
       <Route path="/login" element={<Login />} />
       <Route path="/claims" element={<Claims />} />

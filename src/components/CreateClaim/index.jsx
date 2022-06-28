@@ -1,7 +1,7 @@
 import Input from '../Input'
 import { useNavigate } from "react-router-dom";
+import Dropdown from '../Dropdown';
 
-import './CreateClaim.scss'
 
 const CreateClaim = () => {
   const navigate = useNavigate();
@@ -11,8 +11,8 @@ const CreateClaim = () => {
       <div className='handle__header'>
         <h2>Creating new claim</h2>
       </div>
-      <Input label="Title" text="Figma smart web system for to build"/>
-      <Input label="Type" text="Select type" />
+      <Input label="Title" text="Write your title"/>
+      <Dropdown />
       <Input label="Description" text="Some claim description here" />
       <div className="handle__buttons">
         <button className='cancel' onClick={() => navigate("/claims")}>Cancel</button>

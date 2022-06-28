@@ -6,5 +6,7 @@ export const checkClaimTypeColor = (type) => {
       return {background: "#FF7675"};
     case "TroubleShooting":
       return {background: "#6C5CE7"};
+    default:
+      return {background: "#FDCB6E"};
   }
 }

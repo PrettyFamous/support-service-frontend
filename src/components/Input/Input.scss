@@ -1,6 +1,19 @@
 .container {
   position: relative;
 
+  .invisible {
+    display: none;
+  }
+
+  .error__message {
+    font-style: normal;
+    font-weight: 800;
+    font-size: .7em;
+    line-height: 15px;
+    color: #CC1F1F;
+    margin-top: -8%;
+  }
+
   .label {
     margin: 0;
     letter-spacing: 2.5px;
@@ -44,9 +57,9 @@
 
   .image {
     width: 4vh;
-    position: absolute;
-    bottom: -.8vh;
-    right: .5vh;
+    position: relative;
+    top: -7.6vh;
+    left: 23vw;
   }
 }
 

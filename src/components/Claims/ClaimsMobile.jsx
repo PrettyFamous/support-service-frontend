@@ -4,8 +4,7 @@ import claimsData from '../../data/claims.js'
 import './Claims.scss'
 import Claim from './Claim.jsx'
 
-
-const ClaimsMobile = () => {
+const ClaimsMobile = ({claimsList}) => {
   const navigate = useNavigate();
 
   return (
@@ -15,7 +14,7 @@ const ClaimsMobile = () => {
         <button className='claims__addButton' onClick={() => navigate("/create")}>+</button>
       </div>
       <div className='claims__container'>
-        {claimsData.map((item, index) => <Claim item={item} key={index} />)}
+        {claimsList.map((item) => <Claim item={item} key={item._id} />)}
       </div>
     </div>
   )

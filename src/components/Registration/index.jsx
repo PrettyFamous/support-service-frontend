@@ -42,12 +42,12 @@ const Registration = () => {
         email: email,
         password: password
       }
-      // console.log(credentials)
+
       axios.post(`${serverUrl}/auth/registration`, credentials)
       .then((response) => {
         localStorage.setItem("userInfo", JSON.stringify(response))
         console.log(response)
-        emailError(false)
+        navigate("/claims")
       })
       .catch((res) => {
         console.log(res)

@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom"
 
 import claimsData from '../../data/claims.js'
 import './Claims.scss'
+import { checkClaimStatusColor } from '../../tools/checkClaimStatusColor.js'
 
-const ClaimsDesctop = () => {
+const ClaimsDesctop = ({claimsList}) => {
   const navigate = useNavigate();
 
   return (
@@ -28,18 +29,20 @@ const ClaimsDesctop = () => {
             </tr>
           </thead>
           <tbody>
-            {claimsData.map((item, index) =>
-              <tr key={index}>
+            {claimsList.map((item) =>
+              <tr key={item._id}>
                 <td>{item.title}</td>
-                <td>{item.created}</td>
+                <td>{item.createdAt}</td>
                 <td >
                   <div className='type__inner'>
-                    <div className="type__label" style={checkClaimTypeColor(item.type)} />
-                    {item.type}
+                    <div className="type__label" style={checkClaimTypeColor(item.type.name)} />
+                      {item.type.name}
                   </div>
                 </td>
                 <td>
-                  <div className={item.status + " status"}>{item.status}</div>
+                  <div className={"status"} style={checkClaimStatusColor(item.status.name)}>
+                    {item.status.name}
+                  </div>
                 </td>
                 <td>
                   <a className="table__link" onClick={() => navigate("/handle")}>Browse</a>

@@ -27,10 +27,21 @@ const Login = () => {
         localStorage.setItem("userInfo", JSON.stringify(response))
         console.log(response)
         console.log(localStorage.getItem('userInfo'))
+        navigate("/claims")
+      })
+      .catch((response) => {
+        console.log(response)
+        loginError()
       })
     }
 
     e.preventDefault();
+  }
+
+  const loginError = () => {
+    document.querySelectorAll('input')[0].classList.add("error")
+    document.querySelectorAll('input')[1].classList.add("error")
+    document.querySelector('.invisible').classList.remove("invisible")
   }
 
   return (
@@ -42,7 +53,7 @@ const Login = () => {
         <div className="login">
           <img className="login__logo" src={login_logo} alt="logo" />
           <form className="login__form">
-            <Input label="e-mail" text="Type your e-mail" img={mail} onChange={e => setEmail(e.target.value)}/>
+            <Input label="e-mail" text="Type your e-mail" img={mail} onChange={e => setEmail(e.target.value)} errorMessage="Wrong email or password"/>
             <Input label="password" text="Type your password" img={lock} onChange={e => setPassword(e.target.value)}/>
             <div className="login__check">
               <input type="checkbox" className='custom-checkbox' id="remember-me"></input>
