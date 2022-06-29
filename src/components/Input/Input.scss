@@ -6,6 +6,7 @@
   }
 
   .error__message {
+    position: absolute;
     font-style: normal;
     font-weight: 800;
     font-size: .7em;
@@ -57,9 +58,9 @@
 
   .image {
     width: 4vh;
-    position: relative;
-    top: -7.6vh;
-    left: 23vw;
+    position: absolute;
+    bottom: -.8vh;
+    right: .5vh;
   }
 }
 

@@ -1,3 +1,7 @@
+.container {
+  position: relative;
+}
+
 .label {
   margin: 0;
   letter-spacing: 2.5px;
@@ -21,6 +25,10 @@ select {
   font-size: .73em;
   line-height: 20px;
   color: #000000;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .input {
@@ -47,12 +55,12 @@ select {
     margin-right: 2vw;
   } 
 }
-
-.software {
-  background: #FF7675;
+.image {
+    width: 5.5vh;
+    position: absolute;
+    top: calc(8vh + 31.5%);
+    right: .5vh;
 }
-
-
 
 
 
@@ -74,4 +82,11 @@ select {
     font-weight: 400;
     font-size: .2em;
   }
+
+  .image {
+    width: 6vh;
+    position: absolute;
+    top: calc(8vh + 32.5%);
+    right: .5vh;
+}
 }

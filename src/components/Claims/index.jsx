@@ -14,10 +14,9 @@ const Claims = () => {
   const [claims, setClaims] = useState([])
   
   useEffect(() => {
-    axios.get(
-      `${serverUrl}/claim`, 
-      { headers: {"Authorization": `Bearer ${token}`} }
-      )
+    axios.get(`${serverUrl}/claim`, { 
+      headers: {"Authorization": `Bearer ${token}`} 
+    })
     .then((response) => {
       const items = response.data.claims.map((item) => ({
                       ...item,
@@ -28,8 +27,7 @@ const Claims = () => {
   })
   }, [])
 
-  const parseDate = (date) => 
-    date[8] + date[9] + "/" + date[5] + date[6] + "/" + date[0] + date[1] + date[2] + date[3];
+  const parseDate = (date) => date[8] + date[9] + "/" + date[5] + date[6] + "/" + date[0] + date[1] + date[2] + date[3];
 
   
 
