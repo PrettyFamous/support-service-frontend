@@ -5,6 +5,7 @@ import Input from '../Input'
 import axios from 'axios'
 
 import './Login.scss'
+import { useEffect } from 'react'
 
 const serverUrl = 'http://localhost:3001' 
 
@@ -12,6 +13,13 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+
+  useEffect(() => {
+    if (localStorage.getItem('userInfo')) {
+      navigate('/claims')
+    }
+  }, [])
+  
 
 
   const handleLogin = (e) => {

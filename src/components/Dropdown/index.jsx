@@ -2,11 +2,11 @@ import { down } from '../../assets/img'
 
 import './Dropdown.scss'
 
-const Dropdown = ({onChange}) => {
+const Dropdown = ({onChange, disabled}) => {
   return (
     <div className="">
-      <label htmlFor="types" className='label'>Type</label>
-      <select className="input" onChange={onChange} required >
+      <label className='label'>Type</label>
+      <select className="input" onChange={onChange} required  disabled={disabled}>
           <option value="hard">
             Hardware
           </option>

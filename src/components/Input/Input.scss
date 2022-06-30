@@ -58,8 +58,8 @@
 
   .image {
     width: 4vh;
-    position: absolute;
-    bottom: -.8vh;
+    //position: absolute;
+    top: 3.2vh;
     right: .5vh;
   }
 }
@@ -69,13 +69,29 @@
     .input {
       height: 7vh;
       font-size: 1em;
+
+      &::placeholder {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: .9em;
+        line-height: 22px;
+        color: #000000;
+      }
     }
 
     .label {
       letter-spacing: 2.5px;
-      font-size: .8em;
+      font-size: .75em;
       line-height: 15px;
       margin-bottom: 5px;
+    }
+
+    .image {
+      width: 4vh;
+      //position: absolute;
+      top: 3.8vh;
+      right: .5vh;
     }
   }
 }

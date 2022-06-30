@@ -1,6 +1,6 @@
 import { reg, footer, login_logo, mail, lock } from '../../assets/img'
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Input from '../Input'
 
 import './Registration.scss'
@@ -14,6 +14,11 @@ const Registration = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
+  useEffect(() => {
+    if (localStorage.getItem('userInfo')) {
+      navigate('/claims')
+    }
+  }, [])
 
   const comparePassword = (psw, target) => {
     if (psw !== password) {

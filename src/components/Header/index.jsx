@@ -16,6 +16,11 @@ const Header = () => {
     setMenuOpened(!menuOpened)
   }
 
+  const handleLogout = () => {
+    localStorage.removeItem("userInfo")
+    navigate('/login')
+  }
+
   return (
     <header className='header'>
       {location.pathname === '/claims' && 
@@ -60,7 +65,7 @@ const Header = () => {
       <a className="header__notifications" href="#"><Notifications /></a>
       <img className="header__photo" src={photoPng} alt="photo"/>
       <a href="#" className='header__fullname'>Ivan Ivanov</a>
-      <a href="#" className='header__logout'><img src={logout} alt="logout" /></a>
+      <a className='header__logout'><img src={logout} alt="logout" onClick={handleLogout}/></a>
     </header>
   )
 }

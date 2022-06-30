@@ -1,11 +1,32 @@
 import { useNavigate } from "react-router-dom"
+import { useEffect, useState } from "react";
+import { parseDate } from "../../tools/tools.js";
 
-import claimsData from '../../data/claims.js'
-import './Claims.scss'
 import Claim from './Claim.jsx'
+import axios from 'axios'
 
-const ClaimsMobile = ({claimsList}) => {
+import './Claims.scss'
+
+const serverUrl = 'http://localhost:3001' 
+
+const ClaimsMobile = () => {
   const navigate = useNavigate();
+  const [claims, setClaims] = useState([])
+  const token = JSON.parse(localStorage.getItem("userInfo")).data.token 
+
+  useEffect(() => {
+    axios.get(`${serverUrl}/claim`, { 
+      headers: {"Authorization": `Bearer ${token}`} 
+    })
+    .then((response) => {
+      const items = response.data.claims.map((item) => ({
+                      ...item,
+                      createdAt: parseDate(item.createdAt)
+                    }))
+      setClaims(items)
+    })
+  }, []) 
+
 
   return (
     <div className='claims'>
@@ -14,7 +35,7 @@ const ClaimsMobile = ({claimsList}) => {
         <button className='claims__addButton' onClick={() => navigate("/create")}>+</button>
       </div>
       <div className='claims__container'>
-        {claimsList.map((item) => <Claim item={item} key={item._id} />)}
+        {claims && claims.map((item) => <Claim item={item} key={item._id} />)}
       </div>
     </div>
   )

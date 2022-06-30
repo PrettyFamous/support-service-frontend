@@ -24,7 +24,6 @@ const CreateClaim = () => {
         status: "new"
       }
       
-      console.log(token)
       axios({
         method: "post",
         url: `${serverUrl}/claim`,
