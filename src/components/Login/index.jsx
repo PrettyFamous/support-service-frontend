@@ -62,7 +62,7 @@ const Login = () => {
           <img className="login__logo" src={login_logo} alt="logo" />
           <form className="login__form">
             <Input label="e-mail" text="Type your e-mail" img={mail} onChange={e => setEmail(e.target.value)} errorMessage="Wrong email or password"/>
-            <Input label="password" text="Type your password" img={lock} onChange={e => setPassword(e.target.value)}/>
+            <Input label="password" text="Type your password" img={lock} onChange={e => setPassword(e.target.value)} secure />
             <div className="login__check">
               <input type="checkbox" className='custom-checkbox' id="remember-me"></input>
               <label htmlFor="remember-me" className='check__text'>Keep me logged in</label>

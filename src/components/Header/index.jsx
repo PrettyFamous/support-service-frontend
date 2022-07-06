@@ -9,6 +9,7 @@ import { useState } from 'react'
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
+  const fullName = JSON.parse(localStorage.getItem("userInfo")).data.fullName;
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -64,7 +65,7 @@ const Header = () => {
         : <img className="header__menu-button" src={burger} onClick={menuSwitcher} alt="menu"></img>}
       <a className="header__notifications" href="#"><Notifications /></a>
       <img className="header__photo" src={photoPng} alt="photo"/>
-      <a href="#" className='header__fullname'>Ivan Ivanov</a>
+      <a href="#" className='header__fullname'>{fullName}</a>
       <a className='header__logout'><img src={logout} alt="logout" onClick={handleLogout}/></a>
     </header>
   )

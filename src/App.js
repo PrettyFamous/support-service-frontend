@@ -17,9 +17,6 @@ import Navbar from './components/Navbar';
 import Registration from './components/Registration'
 
 function App() {
-  useEffect(() => {
-
-  }, [localStorage.getItem('userInfo')])
 
   return (
     <BrowserRouter>
