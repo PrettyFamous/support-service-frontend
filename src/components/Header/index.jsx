@@ -7,7 +7,7 @@ import './Header.scss'
 import photoPng from '../../assets/img/profile-photo.png'
 import { useState } from 'react'
 
-const Header = () => {
+const Header = ({setLogged}) => {
   const [menuOpened, setMenuOpened] = useState(false);
   const fullName = JSON.parse(localStorage.getItem("userInfo")).data.fullName;
   const location = useLocation();
@@ -19,6 +19,7 @@ const Header = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("userInfo")
+    setLogged(null)
     navigate('/login')
   }
 

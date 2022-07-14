@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 
 const serverUrl = 'http://localhost:3001' 
 
-const Login = () => {
+const Login = ({setLogged}) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -35,6 +35,7 @@ const Login = () => {
         localStorage.setItem("userInfo", JSON.stringify(response))
         console.log(response)
         console.log(localStorage.getItem('userInfo'))
+        setLogged(true)
         navigate("/claims")
       })
       .catch((response) => {

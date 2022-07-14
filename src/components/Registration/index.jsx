@@ -8,7 +8,7 @@ import axios from 'axios'
 
 const serverUrl = 'http://localhost:3001' 
 
-const Registration = () => {
+const Registration = ({setLogged}) => {
   const navigate = useNavigate();
   const [fullName, setFullName] = useState();
   const [email, setEmail] = useState();
@@ -52,6 +52,7 @@ const Registration = () => {
       .then((response) => {
         localStorage.setItem("userInfo", JSON.stringify(response))
         console.log(response)
+        setLogged(true)
         navigate("/claims")
       })
       .catch((res) => {

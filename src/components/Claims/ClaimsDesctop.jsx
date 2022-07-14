@@ -116,40 +116,38 @@ const ClaimsDesctop = () => {
                   : offset/10 <= 5 ? 2 : Math.floor(totalItems/10)-4}
               </button>
             }
-            {totalItems > 10 && // 2-я кнопка
+            {totalItems > 20 && // 2-я кнопка
               <button className='pages__button' onClick={e => setOffset((e.target.innerText-1)*10)}>
                 {offset/10 >= 5 && offset/10 <= Math.floor(totalItems/10)-5
                   ? offset/10
                   : offset/10 <= 5 ? 3 : Math.floor(totalItems/10)-3}
               </button>
             }
-            {totalItems > 20 && // 3-я кнопка
+            {totalItems > 30 && // 3-я кнопка
               <button className='pages__button' onClick={e => setOffset((e.target.innerText-1)*10)}>
                 {offset/10 >= 5 && offset/10 <= Math.floor(totalItems/10)-5
                   ? offset/10 + 1
-                  : offset/10 <= 5 ? 4 : Math.floor(totalItems/10)-2
-                }
+                  : offset/10 <= 5 ? 4 : Math.floor(totalItems/10)-2}
               </button>
             }
-            {totalItems > 30 && // 4-я кнопка
+            {totalItems > 40 && // 4-я кнопка
               <button className='pages__button' onClick={e => setOffset((e.target.innerText-1)*10)}>
                 {offset/10 >= 5 && offset/10 <= Math.floor(totalItems/10)-5
                   ? offset/10 + 2
-                  : offset/10 <= 5 ? 5 : Math.floor(totalItems/10)-1
-                }
+                  : offset/10 <= 5 ? 5 : Math.floor(totalItems/10)-1}
               </button>
             }
-            {totalItems > 40 && // 5-я кнопка
+            {totalItems > 50 && // 5-я кнопка
               <button className='pages__button' onClick={e => setOffset((e.target.innerText-1)*10)}>
                 {offset/10 >= 5 && offset/10 <= Math.floor(totalItems/10)-5
                   ? offset/10 + 3
                   : offset/10 <= 5 ? 6 : Math.floor(totalItems/10)}
               </button>
             }
-            {totalItems > 50 && offset/10 <= Math.floor(totalItems/10)-5 && 
+            {totalItems > 60 && offset/10 <= Math.floor(totalItems/10)-5 && 
               <img className="pages__etc" src={etc} alt="..."/>
             }
-            {totalItems > 40 &&
+            {totalItems > 50 &&
               <button className='pages__button' onClick={() => setOffset(totalItems % 10== 0 ? Math.floor(totalItems/10 -1) * 10 : Math.floor(totalItems/10) * 10) }>
                 {Math.ceil(totalItems/10).toString()}
               </button>

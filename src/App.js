@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter,
   Routes,
   Route,
   Navigate
 } from "react-router-dom";
-import { useState } from 'react';
 import './index.scss';
 
 import Claims from './components/Claims';
@@ -17,19 +16,29 @@ import Navbar from './components/Navbar';
 import Registration from './components/Registration'
 
 function App() {
+  const [logged, setLogged] = useState('')
+
+  useEffect(() => {
+    setInterval(() => {
+      const local = localStorage.getItem('userInfo')
+      if (local) {
+        setLogged(local)
+      }
+    }, 1000)
+  }, [])
 
   return (
     <BrowserRouter>
-    {localStorage.getItem('userInfo') && 
+    {logged && 
       <>
         <Navbar />
-        <Header />
+        <Header setLogged={setLogged} />
       </>
     }
     <Routes>
       <Route path="/" element={<Navigate to="/login" />} />
-      <Route path="/registration" element={<Registration />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/registration" element={<Registration setLogged={setLogged}/>} />
+      <Route path="/login" element={<Login setLogged={setLogged}/>} />
       <Route path="/claims" element={<Claims />} />
       <Route path="/create" element={<CreateClaim />} />
       <Route path="/handle" element={<HandleClaim />} />
