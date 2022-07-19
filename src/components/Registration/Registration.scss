@@ -1,0 +1,138 @@
+.main__frame {
+  width: 100%;
+  height: 91vh;
+  position: relative;
+  display: flex;
+  
+  .picture {
+    background-color: rgba(211, 237, 225, 0.97);
+    width: 48%;
+    display: flex;
+    
+    img {
+      margin: 0 auto;
+      width: 75%;
+    }
+  }
+
+  .login {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-100%,-50%);
+
+    min-width: 52%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__logo {
+      width: 17%;
+      margin-bottom: 3%;
+    }
+
+    &__form {
+      width: 50%;
+    }
+
+    &__button {
+      margin-top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 5vh;
+      width: 100%;
+      border-radius: 10px;
+      border: 0;
+      background: #7DB59A;
+      color: #fff;
+
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: .75rem;
+
+      &:hover {
+        cursor: pointer;
+        background: #5B9479;
+      }
+
+      &:active {
+        background: #4F896C;
+      }
+    }
+
+    &__reginfo {
+      display: flex;
+      justify-content: center;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: .7em;
+      line-height: 17px;
+      color: #2D3436;
+
+      span {
+        color: #2F80ED;
+
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
+    }
+
+  }
+}
+
+.footer {
+  background-color: #7DB59A;
+  height: 9vh;
+  display: flex;
+
+  img {
+    height: 70%;
+    margin-left: 2%;
+    margin-top: 1.5vh;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .main__frame {
+    width: 100%;
+    height: 91vh;
+    
+    .picture {
+      display: none;
+    }
+  
+    .login {
+      left: 100%;
+      width: 100%;
+      min-width: 300px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      &__form {
+        width: 80%;
+      }
+
+      &__button {
+        margin-top: 3vh;
+        height: 7vh;
+      }
+
+      &__logo {
+        width: 20%;
+        margin-bottom: 3%;
+      }
+    }
+  }
+
+  .footer {
+    img {
+      display: none;
+    }
+  }
+}
