@@ -17,6 +17,7 @@ import Registration from './components/Registration'
 
 function App() {
   const [logged, setLogged] = useState('')
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     setInterval(() => {
@@ -32,14 +33,14 @@ function App() {
     {logged && 
       <>
         <Navbar />
-        <Header setLogged={setLogged} />
+        <Header setLogged={setLogged} setSearch={setSearch}/>
       </>
     }
     <Routes>
       <Route path="/" element={<Navigate to="/login" />} />
       <Route path="/registration" element={<Registration setLogged={setLogged}/>} />
       <Route path="/login" element={<Login setLogged={setLogged}/>} />
-      <Route path="/claims" element={<Claims />} />
+      <Route path="/claims" element={<Claims search={search}/>} />
       <Route path="/create" element={<CreateClaim />} />
       <Route path="/handle" element={<HandleClaim />} />
     </Routes>

@@ -7,11 +7,12 @@ import './Header.scss'
 import photoPng from '../../assets/img/profile-photo.png'
 import { useState } from 'react'
 
-const Header = ({setLogged}) => {
-  const [menuOpened, setMenuOpened] = useState(false);
-  const fullName = JSON.parse(localStorage.getItem("userInfo")).data.fullName;
-  const location = useLocation();
-  const navigate = useNavigate();
+const Header = ({setLogged, setSearch}) => {
+  const [menuOpened, setMenuOpened] = useState(false)
+  const [searchParam, setSearchParam] = useState('')
+  const fullName = JSON.parse(localStorage.getItem("userInfo")).data.fullName
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const menuSwitcher = () => {
     setMenuOpened(!menuOpened)
@@ -26,11 +27,17 @@ const Header = ({setLogged}) => {
   return (
     <header className='header'>
       {location.pathname === '/claims' && 
-        (<div className='header__container'>
-          <input className='header__search' type="text" placeholder='Search'/>
-          <img className='header__search-icon' src={search} alt="search"/>
-         </div>
-        )
+        <>
+          <div className='header__container'>
+            <input 
+              className='header__search' 
+              type="text" 
+              placeholder='Search' 
+              onChange={e => setSearch(e.target.value.toUpperCase())} 
+            />
+            <img className='header__search-icon' src={search} alt="search" />
+          </div>
+        </>
       }
 
       {menuOpened 

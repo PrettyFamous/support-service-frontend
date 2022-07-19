@@ -20,8 +20,8 @@ const Registration = ({setLogged}) => {
     }
   }, [])
 
-  const comparePassword = (psw, target) => {
-    if (psw !== password) {
+  const comparePassword = (target) => {
+    if (target.value !== password) {
       target.classList.add("error");
       document.querySelector('.login__button').disabled = true;
     } else {
@@ -78,7 +78,7 @@ const Registration = ({setLogged}) => {
             <Input label="full name" text="Type your full name" onChange={e => setFullName(e.target.value)}/>
             <Input label="e-mail" text="Type your e-mail" img={mail} onChange={e => setEmail(e.target.value)}/>
             <Input label="password" text="Type your password" img={lock} onChange={e => setPassword(e.target.value)} secure />
-            <Input label="confirm password" text="Type your password" img={lock} onChange={e => comparePassword(e.target.value, e.target)} secure />
+            <Input label="confirm password" text="Type your password" img={lock} onChange={e => comparePassword(e.target)} secure />
             <button className="login__button" onClick={e => handleRegistration(e)}>Register</button>
             <p className="login__reginfo">
               Have an account?&nbsp;

@@ -9,7 +9,7 @@ import './Claims.scss'
 
 const serverUrl = 'http://localhost:3001' 
 
-const ClaimsDesctop = () => {
+const ClaimsDesctop = ({search}) => {
   const navigate = useNavigate();
   const [claims, setClaims] = useState([])
   const token = JSON.parse(localStorage.getItem("userInfo")).data.token
@@ -18,7 +18,7 @@ const ClaimsDesctop = () => {
 
 
   useEffect(() => {
-    axios.get(`${serverUrl}/claim?offset=${offset}&limit=10`, { 
+    axios.get(`${serverUrl}/claim?offset=${offset}&limit=10&search=${search}`, { 
       headers: {"Authorization": `Bearer ${token}`} 
     })
     .then((response) => {
@@ -29,7 +29,9 @@ const ClaimsDesctop = () => {
       setClaims(items)
       setTotalItems(response.data.totalItems)
     })
-  }, [offset]) 
+
+    console.log(search)
+  }, [offset, search]) 
 
   const incOffset = () => {
     if ((offset + 10) < totalItems) {

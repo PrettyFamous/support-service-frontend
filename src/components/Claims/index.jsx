@@ -4,12 +4,12 @@ import ClaimsDesctop from './ClaimsDesctop.jsx'
 import './Claims.scss'
 
 
-const Claims = () => { 
+const Claims = ({search}) => { 
   return (
     <>
       {window.innerWidth < 800
           ? <ClaimsMobile />
-          : <ClaimsDesctop />
+          : <ClaimsDesctop search={search}/>
       }
     </>
   )
